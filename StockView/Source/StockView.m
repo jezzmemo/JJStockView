@@ -1,9 +1,9 @@
 //
 //  StockView.m
-//  HJ
+//  StockView
 //
 //  Created by Jezz on 2017/10/14.
-//  Copyright © 2017年 HJ. All rights reserved.
+//  Copyright © 2017年 StockView. All rights reserved.
 //
 
 #import "StockView.h"
@@ -11,7 +11,7 @@
 
 static NSString* const CellID = @"cellID";
 
-@interface StockView()<UITableViewDelegate,UITableViewDataSource>{
+@interface StockView()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>{
     
 }
 
@@ -35,6 +35,8 @@ static NSString* const CellID = @"cellID";
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    _stockTableView.frame = self.frame;
+
 }
 
 #pragma mark - Setup
@@ -60,12 +62,14 @@ static NSString* const CellID = @"cellID";
     NSParameterAssert(self.dataSource);
     
     StockViewCell* cell = (StockViewCell*)[tableView dequeueReusableCellWithIdentifier:CellID];
+    
+    cell.rightContentScrollView.delegate = self;
 
     if([self.dataSource respondsToSelector:@selector(titleCellForStockView:atRowPath:)]){
-        [cell.contentView addSubview:[self.dataSource titleCellForStockView:self atRowPath:indexPath.row]];
+        [cell setTitleView:[self.dataSource titleCellForStockView:self atRowPath:indexPath.row]];
     }
     if([self.dataSource respondsToSelector:@selector(contentCellForStockView:atRowPath:)]){
-        [cell.contentView addSubview:[self.dataSource contentCellForStockView:self atRowPath:indexPath.row]];
+        [cell setRightContentView:[self.dataSource contentCellForStockView:self atRowPath:indexPath.row]];
     }
     
     if (indexPath.row % 2 != 0) {
@@ -76,6 +80,14 @@ static NSString* const CellID = @"cellID";
     
     return cell;
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if([self.delegate respondsToSelector:@selector(heightForCell:atRowPath:)]){
+        return [self.delegate heightForCell:self atRowPath:indexPath.row];
+    }
+    return 0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -128,11 +140,54 @@ static NSString* const CellID = @"cellID";
     return headerView;
 }
 
+#pragma mark - UIScrollViewDelegate
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewWillBeginDragging");
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewDidEndDecelerating");
+    if (scrollView == self.stockTableView) {
+        NSLog(@"stockTableView");
+    }else if(scrollView == self.headScrollView){
+        NSLog(@"headScrollView");
+    }else{
+        [self scrollRightScrollView:scrollView];
+    }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewDidScroll");
+    if (scrollView == self.stockTableView) {
+        NSLog(@"stockTableView");
+    }else if(scrollView == self.headScrollView){
+        NSLog(@"headScrollView");
+    }else{
+        [self scrollRightScrollView:scrollView];
+    }
+}
+
+#pragma mark - Control Scroll
+
+- (void)scrollRightScrollView:(UIScrollView*)sender{
+    NSArray* visibleCells = [self.stockTableView visibleCells];
+    for (StockViewCell* cell in visibleCells) {
+        if (cell.rightContentScrollView != sender) {
+            cell.rightContentScrollView.delegate = nil;//disable send scrollViewDidScroll message
+            [cell.rightContentScrollView setContentOffset:CGPointMake(sender.contentOffset.x, 0) animated:NO];
+            cell.rightContentScrollView.delegate = self;//enable send scrollViewDidScroll message
+        }
+    }
+}
+
+#pragma mark - Property Get
+
 - (UITableView*)stockTableView{
     if(_stockTableView != nil){
         return _stockTableView;
     }
-    _stockTableView = [[UITableView alloc] initWithFrame:self.frame style:UITableViewStylePlain];
+    _stockTableView = [UITableView new];
     _stockTableView.dataSource = self;
     _stockTableView.delegate = self;
     _stockTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
