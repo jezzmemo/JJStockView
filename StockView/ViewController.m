@@ -26,7 +26,7 @@
 #pragma mark - Stock DataSource
 
 - (NSUInteger)countForStockView:(StockView*)stockView{
-    return 20;
+    return 30;
 }
 
 - (UIView*)titleCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row{
@@ -54,6 +54,32 @@
 - (CGFloat)heightForCell:(StockView*)stockView atRowPath:(NSUInteger)row{
     return 30.0f;
 }
+
+- (UIView*)headRegularTitle:(StockView*)stockView{
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    label.text = @"标题";
+    label.backgroundColor = [UIColor greenColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
+
+- (UIView*)headTitle:(StockView*)stockView{
+    UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
+    bg.backgroundColor = [UIColor redColor];
+    for (int i = 0; i < 10; i++) {
+        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
+        label.text = [NSString stringWithFormat:@"标题:%d",i];
+        label.textAlignment = NSTextAlignmentCenter;
+        [bg addSubview:label];
+    }
+    return bg;
+}
+
+- (CGFloat)heightForHeadTitle:(StockView*)stockView{
+    return 30.0f;
+}
+
+#pragma mark - Get
 
 - (StockView*)stockView{
     if(_stockView != nil){

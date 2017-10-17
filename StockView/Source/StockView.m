@@ -12,7 +12,7 @@
 static NSString* const CellID = @"cellID";
 
 @interface StockView()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>{
-    
+    CGFloat _lastScrollX;//Save scroll x position
 }
 
 @property(nonatomic,readwrite,strong)UITableView* stockTableView;
@@ -28,6 +28,7 @@ static NSString* const CellID = @"cellID";
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
+        _lastScrollX = 0;
         [self setupView];
     }
     return self;
@@ -128,6 +129,8 @@ static NSString* const CellID = @"cellID";
         headHeight =  [self.delegate heightForHeadTitle:self];
     }
     
+    [headerView addSubview:self.headScrollView];
+    
     self.headScrollView.frame = CGRectMake(regularWidth,0,CGRectGetWidth(self.frame) - regularWidth,headHeight);
     
     if([self.delegate respondsToSelector:@selector(headTitle:)]){
@@ -142,35 +145,29 @@ static NSString* const CellID = @"cellID";
 
 #pragma mark - UIScrollViewDelegate
 
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewWillBeginDragging");
-}
-
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidEndDecelerating");
     if (scrollView == self.stockTableView) {
-        NSLog(@"stockTableView");
+        [self scrollToLastScrollX];
     }else if(scrollView == self.headScrollView){
-        NSLog(@"headScrollView");
+        [self linkAgeScrollView:scrollView];
     }else{
-        [self scrollRightScrollView:scrollView];
+        [self linkAgeScrollView:scrollView];
     }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidScroll");
     if (scrollView == self.stockTableView) {
-        NSLog(@"stockTableView");
+        [self scrollToLastScrollX];
     }else if(scrollView == self.headScrollView){
-        NSLog(@"headScrollView");
+        [self linkAgeScrollView:scrollView];
     }else{
-        [self scrollRightScrollView:scrollView];
+        [self linkAgeScrollView:scrollView];
     }
 }
 
 #pragma mark - Control Scroll
 
-- (void)scrollRightScrollView:(UIScrollView*)sender{
+- (void)linkAgeScrollView:(UIScrollView*)sender{
     NSArray* visibleCells = [self.stockTableView visibleCells];
     for (StockViewCell* cell in visibleCells) {
         if (cell.rightContentScrollView != sender) {
@@ -179,6 +176,26 @@ static NSString* const CellID = @"cellID";
             cell.rightContentScrollView.delegate = self;//enable send scrollViewDidScroll message
         }
     }
+    if (sender != self.headScrollView) {
+        self.headScrollView.delegate = nil;//disable send scrollViewDidScroll message
+        [self.headScrollView setContentOffset:CGPointMake(sender.contentOffset.x, 0) animated:NO];
+        self.headScrollView.delegate = self;//enable send scrollViewDidScroll message
+    }
+    
+    _lastScrollX = sender.contentOffset.x;
+}
+
+- (void)scrollToLastScrollX{
+    NSArray* visibleCells = [self.stockTableView visibleCells];
+    for (StockViewCell* cell in visibleCells) {
+            cell.rightContentScrollView.delegate = nil;//disable send scrollViewDidScroll message
+            [cell.rightContentScrollView setContentOffset:CGPointMake(_lastScrollX, 0) animated:NO];
+            cell.rightContentScrollView.delegate = self;//enable send scrollViewDidScroll message
+    }
+    
+    self.headScrollView.delegate = nil;//disable send scrollViewDidScroll message
+    [self.headScrollView setContentOffset:CGPointMake(_lastScrollX, 0) animated:NO];
+    self.headScrollView.delegate = self;//enable send scrollViewDidScroll message
 }
 
 #pragma mark - Property Get

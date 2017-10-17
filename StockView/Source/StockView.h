@@ -1,9 +1,9 @@
 //
 //  StockView.h
-//  HJ
+//  StockView
 //
 //  Created by Jezz on 2017/10/14.
-//  Copyright © 2017年 HJ. All rights reserved.
+//  Copyright © 2017年 StockView. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
