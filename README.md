@@ -7,7 +7,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'TargetName' do
-	pod 'StockView'
+    pod 'StockView'
 end
 ```
 
@@ -52,6 +52,7 @@ Delegate的所有实现都是可选的:
 ```
 
 下面我用一张图来表现每个元素对应的方法:
+
 ![code demo](https://raw.githubusercontent.com/jezzmemo/StockView/master/demo_code.png)
 
 
