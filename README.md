@@ -1,7 +1,22 @@
-![demo](https://github.com/jezzmemo/StockView/raw/master/demo.gif)
+![demo gif](https://github.com/jezzmemo/StockView/raw/master/demo.gif)
 
-## StockView
-股票滚动控件:
+## 如何安装
+
+__Podfile__
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+target 'TargetName' do
+pod 'StockView'
+end
+```
+
+```
+$ pod install
+```
+
+## 实现功能
 
 * 左右滑动时，第一列位置不变，并且头部一起联动.
 * 上下滑动时，头部不动，内容部分正常滑动
