@@ -7,7 +7,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'TargetName' do
-pod 'StockView'
+	pod 'StockView'
 end
 ```
 
@@ -22,11 +22,11 @@ $ pod install
 @protocol StockViewDataSource <NSObject>
 
 @required
-
+//内容的行数
 - (NSUInteger)countForStockView:(StockView*)stockView;
-
+//内容左边的标题View
 - (UIView*)titleCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row;
-
+//内容右边可滑动View
 - (UIView*)contentCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row;
 
 @end
@@ -37,24 +37,22 @@ Delegate的所有实现都是可选的:
 @protocol StockViewDelegate <NSObject>
 
 @optional
-
+//左上角的固定不动的View
 - (UIView*)headRegularTitle:(StockView*)stockView;
-
+//可滑动头部View
 - (UIView*)headTitle:(StockView*)stockView;
-
+//头部高度
 - (CGFloat)heightForHeadTitle:(StockView*)stockView;
+//内容高度
 - (CGFloat)heightForCell:(StockView*)stockView atRowPath:(NSUInteger)row;
-
+//点击每行事件
 - (void)didSelect:(StockView*)stockView atRowPath:(NSUInteger)row;
 
 @end
 ```
 
-## 实现功能
-
-* 左右滑动时，第一列位置不变，并且头部一起联动.
-* 上下滑动时，头部不动，内容部分正常滑动
-* 获取到当前行的点击事件
+下面我用一张图来表现每个元素对应的方法:
+![code demo](https://raw.githubusercontent.com/jezzmemo/StockView/master/demo_code.png)
 
 
 ## 实现原理
