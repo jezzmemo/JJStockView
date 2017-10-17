@@ -1,3 +1,5 @@
+![demo](https://github.com/jezzmemo/StockView/raw/master/demo.gif)
+
 ## StockView
 股票滚动控件:
 
@@ -10,7 +12,7 @@
 
 * 顶部不变的头部用heightForHeaderInSection显示，用标题和内容两部分组成，内容部分是用UIScrollView作为容器
 * 内容部分，用头部类似的结构，cellForRowAtIndexPath实现Cell,分成左右两边部分，左边Label，右边用UIScrollView作为容器
-* 基于以上的结构，在任意一个UIScrollView滑动的时候，头部的UIScrollView和Cell的UIScrollVie一起来滚动,代码片段如下:
+* 基于以上的结构，在任意一个UIScrollView滑动的时候，头部的UIScrollView和Cell的UIScrollView一起来滚动,代码片段如下:
 ```objc
 - (void)linkAgeScrollView:(UIScrollView*)sender{
     NSArray* visibleCells = [self.stockTableView visibleCells];
