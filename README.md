@@ -55,6 +55,9 @@ Delegate的所有实现都是可选的:
 
 ![code demo](https://raw.githubusercontent.com/jezzmemo/StockView/master/demo_code.png)
 
+最后给一个Demo的连接，我就不贴代码了:
+[https://github.com/jezzmemo/StockView/blob/master/StockView/DemoViewController.m](https://github.com/jezzmemo/StockView/blob/master/StockView/DemoViewController.m)
+
 
 ## 实现原理
 
