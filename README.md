@@ -2,7 +2,6 @@
 
 ## 如何安装
 
-__Podfile__
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
@@ -14,6 +13,41 @@ end
 
 ```
 $ pod install
+```
+
+## 如何使用
+
+基本上和TableView类似，首先必须实现以下DataSource
+```objc
+@protocol StockViewDataSource <NSObject>
+
+@required
+
+- (NSUInteger)countForStockView:(StockView*)stockView;
+
+- (UIView*)titleCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row;
+
+- (UIView*)contentCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row;
+
+@end
+```
+
+Delegate的所有实现都是可选的:
+```objc
+@protocol StockViewDelegate <NSObject>
+
+@optional
+
+- (UIView*)headRegularTitle:(StockView*)stockView;
+
+- (UIView*)headTitle:(StockView*)stockView;
+
+- (CGFloat)heightForHeadTitle:(StockView*)stockView;
+- (CGFloat)heightForCell:(StockView*)stockView atRowPath:(NSUInteger)row;
+
+- (void)didSelect:(StockView*)stockView atRowPath:(NSUInteger)row;
+
+@end
 ```
 
 ## 实现功能
