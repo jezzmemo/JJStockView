@@ -33,7 +33,7 @@
 - (UIView*)titleCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row{
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     label.text = [NSString stringWithFormat:@"标题:%ld",row];
-    label.textColor = [UIColor lightGrayColor];
+    label.textColor = [UIColor grayColor];
     label.backgroundColor = [UIColor colorWithRed:223.0f/255.0 green:223.0f/255.0 blue:223.0f/255.0 alpha:1.0];
     label.textAlignment = NSTextAlignmentCenter;
     return label;
@@ -69,7 +69,7 @@
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     label.text = @"标题";
     label.backgroundColor = [UIColor whiteColor];
-    label.textColor = [UIColor lightGrayColor];
+    label.textColor = [UIColor grayColor];
     label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
@@ -81,7 +81,7 @@
         UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 40)];
         label.text = [NSString stringWithFormat:@"标题:%d",i];
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor colorWithRed:154.0f/255.0 green:154.0f/255.0 blue:154.0f/255.0 alpha:1.0];
+        label.textColor = [UIColor grayColor];
         [bg addSubview:label];
     }
     return bg;
@@ -99,6 +99,7 @@
 
 - (void)buttonAction:(UIButton*)sender{
     NSLog(@"Button Row:%ld",sender.tag);
+    sender.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - Get
