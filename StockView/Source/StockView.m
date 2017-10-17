@@ -73,11 +73,8 @@ static NSString* const CellID = @"cellID";
         [cell setRightContentView:[self.dataSource contentCellForStockView:self atRowPath:indexPath.row]];
     }
     
-    if (indexPath.row % 2 != 0) {
-        cell.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.2];
-    } else {
-        cell.backgroundColor = [UIColor whiteColor];
-    }
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [cell.rightContentScrollView addGestureRecognizer:tapGesture];
     
     return cell;
     
@@ -89,10 +86,6 @@ static NSString* const CellID = @"cellID";
         return [self.delegate heightForCell:self atRowPath:indexPath.row];
     }
     return 0;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -196,6 +189,16 @@ static NSString* const CellID = @"cellID";
     self.headScrollView.delegate = nil;//disable send scrollViewDidScroll message
     [self.headScrollView setContentOffset:CGPointMake(_lastScrollX, 0) animated:NO];
     self.headScrollView.delegate = self;//enable send scrollViewDidScroll message
+}
+
+#pragma mark - Tap Click
+
+- (void)tapAction:(UITapGestureRecognizer *)gesture{
+    CGPoint point = [gesture locationInView:self.stockTableView];
+    NSIndexPath* indexPath = [self.stockTableView indexPathForRowAtPoint:point];
+    if (indexPath && [self.delegate respondsToSelector:@selector(didSelect:atRowPath:)]) {
+        [self.delegate didSelect:self atRowPath:indexPath.row];
+    }
 }
 
 #pragma mark - Property Get

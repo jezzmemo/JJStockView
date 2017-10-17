@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *tapCellScrollNotification = @"tapCellScrollNotification";
-
 @interface StockViewCell : UITableViewCell
 
 @property(nonatomic,readonly,strong)UIScrollView* rightContentScrollView;
@@ -17,7 +15,5 @@ static NSString *tapCellScrollNotification = @"tapCellScrollNotification";
 - (void)setTitleView:(UIView*)titleView;
 
 - (void)setRightContentView:(UIView*)contentView;
-
-@property (nonatomic, assign) BOOL isNotification;
 
 @end

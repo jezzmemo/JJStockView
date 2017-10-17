@@ -7,6 +7,7 @@
 //
 
 #import "StockViewCell.h"
+#import "StockScrollView.h"
 
 const static NSInteger TITLE_TAG = 1000;
 const static NSInteger CONTENT_TAG = 1001;
@@ -46,13 +47,19 @@ const static NSInteger CONTENT_TAG = 1001;
 }
 
 - (void)setupView{
-    _rightContentScrollView = [UIScrollView new];
-    _rightContentScrollView.showsVerticalScrollIndicator = NO;
-    _rightContentScrollView.showsHorizontalScrollIndicator = NO;
-    [self.contentView addSubview:_rightContentScrollView];
+    [self.contentView addSubview:self.rightContentScrollView];
 }
 
+#pragma mark - Public
+
 - (UIScrollView*)rightContentScrollView{
+    if (_rightContentScrollView != nil) {
+        return _rightContentScrollView;
+    }
+    _rightContentScrollView = [StockScrollView new];
+    _rightContentScrollView.canCancelContentTouches = YES;
+    _rightContentScrollView.showsVerticalScrollIndicator = NO;
+    _rightContentScrollView.showsHorizontalScrollIndicator = NO;
     return _rightContentScrollView;
 }
 
@@ -69,7 +76,7 @@ const static NSInteger CONTENT_TAG = 1001;
 }
 
 - (void)setRightContentView:(UIView*)contentView{
-    UIView* view = [self viewWithTag:CONTENT_TAG];
+    UIView* view = [_rightContentScrollView viewWithTag:CONTENT_TAG];
     if(view){
         [view removeFromSuperview];
     }
@@ -81,5 +88,6 @@ const static NSInteger CONTENT_TAG = 1001;
     [_rightContentScrollView addSubview:contentView];
     
 }
+
 
 @end

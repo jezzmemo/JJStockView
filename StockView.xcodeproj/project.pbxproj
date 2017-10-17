@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6186110E1F95E2F600E4E8B4 /* StockScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6186110D1F95E2F600E4E8B4 /* StockScrollView.m */; };
 		61F13E7A1F91F670002F4681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E791F91F670002F4681 /* AppDelegate.m */; };
-		61F13E7D1F91F670002F4681 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E7C1F91F670002F4681 /* ViewController.m */; };
-		61F13E801F91F670002F4681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F13E7E1F91F670002F4681 /* Main.storyboard */; };
+		61F13E7D1F91F670002F4681 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E7C1F91F670002F4681 /* DemoViewController.m */; };
 		61F13E821F91F670002F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61F13E811F91F670002F4681 /* Assets.xcassets */; };
 		61F13E851F91F670002F4681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F13E831F91F670002F4681 /* LaunchScreen.storyboard */; };
 		61F13E881F91F670002F4681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E871F91F670002F4681 /* main.m */; };
@@ -37,12 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6186110C1F95E2F600E4E8B4 /* StockScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockScrollView.h; sourceTree = "<group>"; };
+		6186110D1F95E2F600E4E8B4 /* StockScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockScrollView.m; sourceTree = "<group>"; };
 		61F13E751F91F670002F4681 /* StockView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F13E781F91F670002F4681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61F13E791F91F670002F4681 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		61F13E7B1F91F670002F4681 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		61F13E7C1F91F670002F4681 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		61F13E7F1F91F670002F4681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61F13E7B1F91F670002F4681 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		61F13E7C1F91F670002F4681 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		61F13E811F91F670002F4681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61F13E841F91F670002F4681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61F13E861F91F670002F4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,9 +111,8 @@
 				61F13EAA1F91F6B1002F4681 /* Source */,
 				61F13E781F91F670002F4681 /* AppDelegate.h */,
 				61F13E791F91F670002F4681 /* AppDelegate.m */,
-				61F13E7B1F91F670002F4681 /* ViewController.h */,
-				61F13E7C1F91F670002F4681 /* ViewController.m */,
-				61F13E7E1F91F670002F4681 /* Main.storyboard */,
+				61F13E7B1F91F670002F4681 /* DemoViewController.h */,
+				61F13E7C1F91F670002F4681 /* DemoViewController.m */,
 				61F13E811F91F670002F4681 /* Assets.xcassets */,
 				61F13E831F91F670002F4681 /* LaunchScreen.storyboard */,
 				61F13E861F91F670002F4681 /* Info.plist */,
@@ -146,6 +146,8 @@
 				61F13EAD1F91F6D4002F4681 /* StockView.m */,
 				61F13EAC1F91F6D3002F4681 /* StockViewCell.h */,
 				61F13EAB1F91F6D3002F4681 /* StockViewCell.m */,
+				6186110C1F95E2F600E4E8B4 /* StockScrollView.h */,
+				6186110D1F95E2F600E4E8B4 /* StockScrollView.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -258,7 +260,6 @@
 			files = (
 				61F13E851F91F670002F4681 /* LaunchScreen.storyboard in Resources */,
 				61F13E821F91F670002F4681 /* Assets.xcassets in Resources */,
-				61F13E801F91F670002F4681 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61F13EB01F91F6D4002F4681 /* StockView.m in Sources */,
-				61F13E7D1F91F670002F4681 /* ViewController.m in Sources */,
+				61F13E7D1F91F670002F4681 /* DemoViewController.m in Sources */,
+				6186110E1F95E2F600E4E8B4 /* StockScrollView.m in Sources */,
 				61F13EAF1F91F6D4002F4681 /* StockViewCell.m in Sources */,
 				61F13E881F91F670002F4681 /* main.m in Sources */,
 				61F13E7A1F91F670002F4681 /* AppDelegate.m in Sources */,
@@ -323,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		61F13E7E1F91F670002F4681 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61F13E7F1F91F670002F4681 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		61F13E831F91F670002F4681 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
