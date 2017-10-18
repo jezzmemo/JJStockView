@@ -99,7 +99,6 @@
 
 - (void)buttonAction:(UIButton*)sender{
     NSLog(@"Button Row:%ld",sender.tag);
-    sender.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - Get

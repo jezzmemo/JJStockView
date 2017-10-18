@@ -12,7 +12,9 @@
 
 
 /**
- UITableViewCell的右边可滑动的ScrollView
+ UITableViewCell的右边可滑动的ScrollView,设置成ReadOnly的目标就是对外使用，
+ 但是rightContentScrollView的生命周期由JJStockViewCell控制,可以设置Delegate，
+ 这样Cell和Controller之间就不用通讯，所有的UIScrollView事件都由JJStockView统一处理。
  */
 @property(nonatomic,readonly,strong)UIScrollView* rightContentScrollView;
 

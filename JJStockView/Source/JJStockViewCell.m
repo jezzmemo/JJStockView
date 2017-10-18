@@ -37,7 +37,6 @@ const static NSInteger CONTENT_TAG = 1001;
     
     _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(titleView.frame), CGRectGetHeight(contentView.frame));
     _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(contentView.frame), CGRectGetHeight(contentView.frame));
-    [_rightContentScrollView addSubview:contentView];
     
 }
 
@@ -71,8 +70,7 @@ const static NSInteger CONTENT_TAG = 1001;
     titleView.tag = TITLE_TAG;
     [self.contentView addSubview:titleView];
     
-    UIView* contentView = [self viewWithTag:CONTENT_TAG];
-    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(titleView.frame), CGRectGetHeight(contentView.frame));
+    [self setNeedsLayout];
 }
 
 - (void)setRightContentView:(UIView*)contentView{
@@ -81,12 +79,9 @@ const static NSInteger CONTENT_TAG = 1001;
         [view removeFromSuperview];
     }
     contentView.tag = CONTENT_TAG;
-    UIView* titleView = [self viewWithTag:TITLE_TAG];
-    
-    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(titleView.frame), CGRectGetHeight(contentView.frame));
-    _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(contentView.frame), CGRectGetHeight(contentView.frame));
     [_rightContentScrollView addSubview:contentView];
     
+    [self setNeedsLayout];
 }
 
 
