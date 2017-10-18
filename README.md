@@ -1,4 +1,11 @@
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/JJStockView.svg)](https://img.shields.io/cocoapods/v/JJStockView.svg)
+[![Platform](https://img.shields.io/cocoapods/p/JJStockView.svg?style=flat)](http://cocoadocs.org/docsets/JJStockView)
+[![Pod License](http://img.shields.io/cocoapods/l/JJStockView.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 ![demo gif](https://github.com/jezzmemo/JJStockView/raw/master/demo.gif)
+
+## JJStockView
+模仿股票表格和课程表，左右滑动时，标题部分不动，表头和右边内容一起滑动，上下滑动时，表头不动，所欲内容一起上下滑动
 
 ## 如何安装
 

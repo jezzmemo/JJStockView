@@ -36,7 +36,7 @@ static NSString* const CellID = @"cellID";
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    _stockTableView.frame = self.frame;
+    _stockTableView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
 
 }
 
