@@ -1,7 +1,3 @@
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/JJStockView.svg)](https://img.shields.io/cocoapods/v/JJStockView.svg)
-[![Platform](https://img.shields.io/cocoapods/p/JJStockView.svg?style=flat)](http://cocoadocs.org/docsets/JJStockView)
-[![Pod License](http://img.shields.io/cocoapods/l/JJStockView.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
-
 ![demo gif](https://github.com/jezzmemo/JJStockView/raw/master/demo.gif)
 
 ## JJStockView
