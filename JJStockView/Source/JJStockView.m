@@ -1,9 +1,9 @@
 //
-//  StockView.m
-//  StockView
+//  JJStockView.m
+//  JJStockView
 //
 //  Created by Jezz on 2017/10/14.
-//  Copyright © 2017年 StockView. All rights reserved.
+//  Copyright © 2017年 JJStockView. All rights reserved.
 //
 
 #import "JJStockView.h"

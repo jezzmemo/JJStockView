@@ -434,7 +434,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/JJStockView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hjclass.hujiangclass;
+				PRODUCT_BUNDLE_IDENTIFIER = JJStockView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ad6513e7-9a07-4302-842d-072aab56d862";
 				PROVISIONING_PROFILE_SPECIFIER = "HJClass-Debug";
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/JJStockView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hjclass.hujiangclass;
+				PRODUCT_BUNDLE_IDENTIFIER = JJStockView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

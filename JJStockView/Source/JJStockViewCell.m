@@ -1,6 +1,6 @@
 //
-//  StockViewCell.m
-//  StockView
+//  JJStockViewCell.m
+//  JJStockView
 //
 //  Created by Jezz on 2017/10/14.
 //  Copyright © 2017年 StockView. All rights reserved.

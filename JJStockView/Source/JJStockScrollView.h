@@ -1,9 +1,9 @@
 //
-//  StockScrollView.h
-//  StockView
+//  JJStockScrollView.h
+//  JJStockView
 //
 //  Created by Jezz on 2017/10/17.
-//  Copyright © 2017年 Jezz. All rights reserved.
+//  Copyright © 2017年 JJStockView. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
