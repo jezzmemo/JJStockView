@@ -6,12 +6,12 @@
 //  Copyright © 2017年 StockView. All rights reserved.
 //
 
-#import "StockView.h"
-#import "StockViewCell.h"
+#import "JJStockView.h"
+#import "JJStockViewCell.h"
 
 static NSString* const CellID = @"cellID";
 
-@interface StockView()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>{
+@interface JJStockView()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>{
     CGFloat _lastScrollX;//Save scroll x position
 }
 
@@ -20,7 +20,7 @@ static NSString* const CellID = @"cellID";
 
 @end
 
-@implementation StockView
+@implementation JJStockView
 
 
 #pragma mark - Init/Override
@@ -62,7 +62,7 @@ static NSString* const CellID = @"cellID";
     
     NSParameterAssert(self.dataSource);
     
-    StockViewCell* cell = (StockViewCell*)[tableView dequeueReusableCellWithIdentifier:CellID];
+    JJStockViewCell* cell = (JJStockViewCell*)[tableView dequeueReusableCellWithIdentifier:CellID];
     
     cell.rightContentScrollView.delegate = self;
 
@@ -162,7 +162,7 @@ static NSString* const CellID = @"cellID";
 
 - (void)linkAgeScrollView:(UIScrollView*)sender{
     NSArray* visibleCells = [self.stockTableView visibleCells];
-    for (StockViewCell* cell in visibleCells) {
+    for (JJStockViewCell* cell in visibleCells) {
         if (cell.rightContentScrollView != sender) {
             cell.rightContentScrollView.delegate = nil;//disable send scrollViewDidScroll message
             [cell.rightContentScrollView setContentOffset:CGPointMake(sender.contentOffset.x, 0) animated:NO];
@@ -180,7 +180,7 @@ static NSString* const CellID = @"cellID";
 
 - (void)scrollToLastScrollX{
     NSArray* visibleCells = [self.stockTableView visibleCells];
-    for (StockViewCell* cell in visibleCells) {
+    for (JJStockViewCell* cell in visibleCells) {
             cell.rightContentScrollView.delegate = nil;//disable send scrollViewDidScroll message
             [cell.rightContentScrollView setContentOffset:CGPointMake(_lastScrollX, 0) animated:NO];
             cell.rightContentScrollView.delegate = self;//enable send scrollViewDidScroll message
@@ -211,7 +211,7 @@ static NSString* const CellID = @"cellID";
     _stockTableView.dataSource = self;
     _stockTableView.delegate = self;
     _stockTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_stockTableView registerClass:[StockViewCell class] forCellReuseIdentifier:CellID];
+    [_stockTableView registerClass:[JJStockViewCell class] forCellReuseIdentifier:CellID];
     return _stockTableView;
 }
 

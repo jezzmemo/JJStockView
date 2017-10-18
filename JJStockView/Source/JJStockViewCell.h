@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StockViewCell : UITableViewCell
+@interface JJStockViewCell : UITableViewCell
 
 @property(nonatomic,readonly,strong)UIScrollView* rightContentScrollView;
 

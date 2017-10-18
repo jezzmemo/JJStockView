@@ -6,20 +6,20 @@
 //  Copyright © 2017年 StockView. All rights reserved.
 //
 
-#import "StockViewCell.h"
-#import "StockScrollView.h"
+#import "JJStockViewCell.h"
+#import "JJStockScrollView.h"
 
 const static NSInteger TITLE_TAG = 1000;
 const static NSInteger CONTENT_TAG = 1001;
 
-@interface StockViewCell()<UIScrollViewDelegate>{
+@interface JJStockViewCell()<UIScrollViewDelegate>{
     @private
     UIScrollView* _rightContentScrollView;
 }
 
 @end
 
-@implementation StockViewCell
+@implementation JJStockViewCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -56,7 +56,7 @@ const static NSInteger CONTENT_TAG = 1001;
     if (_rightContentScrollView != nil) {
         return _rightContentScrollView;
     }
-    _rightContentScrollView = [StockScrollView new];
+    _rightContentScrollView = [JJStockScrollView new];
     _rightContentScrollView.canCancelContentTouches = YES;
     _rightContentScrollView.showsVerticalScrollIndicator = NO;
     _rightContentScrollView.showsHorizontalScrollIndicator = NO;

@@ -7,11 +7,11 @@
 //
 
 #import "DemoViewController.h"
-#import "StockView.h"
+#import "JJStockView.h"
 
 @interface DemoViewController ()<StockViewDataSource,StockViewDelegate>
 
-@property(nonatomic,readwrite,strong)StockView* stockView;
+@property(nonatomic,readwrite,strong)JJStockView* stockView;
 
 @end
 
@@ -26,11 +26,11 @@
 
 #pragma mark - Stock DataSource
 
-- (NSUInteger)countForStockView:(StockView*)stockView{
+- (NSUInteger)countForStockView:(JJStockView*)stockView{
     return 30;
 }
 
-- (UIView*)titleCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row{
+- (UIView*)titleCellForStockView:(JJStockView*)stockView atRowPath:(NSUInteger)row{
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     label.text = [NSString stringWithFormat:@"标题:%ld",row];
     label.textColor = [UIColor grayColor];
@@ -39,7 +39,7 @@
     return label;
 }
 
-- (UIView*)contentCellForStockView:(StockView*)stockView atRowPath:(NSUInteger)row{
+- (UIView*)contentCellForStockView:(JJStockView*)stockView atRowPath:(NSUInteger)row{
     
     UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
     bg.backgroundColor = row % 2 == 0 ?[UIColor whiteColor] :[UIColor colorWithRed:240.0f/255.0 green:240.0f/255.0 blue:240.0f/255.0 alpha:1.0];
@@ -61,11 +61,11 @@
 
 #pragma mark - Stock Delegate
 
-- (CGFloat)heightForCell:(StockView*)stockView atRowPath:(NSUInteger)row{
+- (CGFloat)heightForCell:(JJStockView*)stockView atRowPath:(NSUInteger)row{
     return 30.0f;
 }
 
-- (UIView*)headRegularTitle:(StockView*)stockView{
+- (UIView*)headRegularTitle:(JJStockView*)stockView{
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     label.text = @"标题";
     label.backgroundColor = [UIColor whiteColor];
@@ -74,7 +74,7 @@
     return label;
 }
 
-- (UIView*)headTitle:(StockView*)stockView{
+- (UIView*)headTitle:(JJStockView*)stockView{
     UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 40)];
     bg.backgroundColor = [UIColor colorWithRed:223.0f/255.0 green:223.0f/255.0 blue:223.0f/255.0 alpha:1.0];
     for (int i = 0; i < 10; i++) {
@@ -87,11 +87,11 @@
     return bg;
 }
 
-- (CGFloat)heightForHeadTitle:(StockView*)stockView{
+- (CGFloat)heightForHeadTitle:(JJStockView*)stockView{
     return 40.0f;
 }
 
-- (void)didSelect:(StockView*)stockView atRowPath:(NSUInteger)row{
+- (void)didSelect:(JJStockView*)stockView atRowPath:(NSUInteger)row{
     NSLog(@"DidSelect Row:%ld",row);
 }
 
@@ -104,11 +104,11 @@
 
 #pragma mark - Get
 
-- (StockView*)stockView{
+- (JJStockView*)stockView{
     if(_stockView != nil){
         return _stockView;
     }
-    _stockView = [StockView new];
+    _stockView = [JJStockView new];
     _stockView.dataSource = self;
     _stockView.delegate = self;
     return _stockView;

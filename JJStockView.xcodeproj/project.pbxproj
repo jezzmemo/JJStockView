@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6186110E1F95E2F600E4E8B4 /* StockScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6186110D1F95E2F600E4E8B4 /* StockScrollView.m */; };
+		6186110E1F95E2F600E4E8B4 /* JJStockScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6186110D1F95E2F600E4E8B4 /* JJStockScrollView.m */; };
 		61F13E7A1F91F670002F4681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E791F91F670002F4681 /* AppDelegate.m */; };
 		61F13E7D1F91F670002F4681 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E7C1F91F670002F4681 /* DemoViewController.m */; };
 		61F13E821F91F670002F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61F13E811F91F670002F4681 /* Assets.xcassets */; };
 		61F13E881F91F670002F4681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E871F91F670002F4681 /* main.m */; };
 		61F13E921F91F670002F4681 /* StockViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E911F91F670002F4681 /* StockViewTests.m */; };
 		61F13E9D1F91F670002F4681 /* StockViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13E9C1F91F670002F4681 /* StockViewUITests.m */; };
-		61F13EAF1F91F6D4002F4681 /* StockViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13EAB1F91F6D3002F4681 /* StockViewCell.m */; };
-		61F13EB01F91F6D4002F4681 /* StockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13EAD1F91F6D4002F4681 /* StockView.m */; };
+		61F13EAF1F91F6D4002F4681 /* JJStockViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13EAB1F91F6D3002F4681 /* JJStockViewCell.m */; };
+		61F13EB01F91F6D4002F4681 /* JJStockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F13EAD1F91F6D4002F4681 /* JJStockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6186110C1F95E2F600E4E8B4 /* StockScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockScrollView.h; sourceTree = "<group>"; };
-		6186110D1F95E2F600E4E8B4 /* StockScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockScrollView.m; sourceTree = "<group>"; };
-		61F13E751F91F670002F4681 /* StockView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6186110C1F95E2F600E4E8B4 /* JJStockScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJStockScrollView.h; sourceTree = "<group>"; };
+		6186110D1F95E2F600E4E8B4 /* JJStockScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJStockScrollView.m; sourceTree = "<group>"; };
+		61F13E751F91F670002F4681 /* JJStockView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJStockView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F13E781F91F670002F4681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61F13E791F91F670002F4681 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		61F13E7B1F91F670002F4681 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -46,16 +46,16 @@
 		61F13E811F91F670002F4681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61F13E861F91F670002F4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F13E871F91F670002F4681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		61F13E8D1F91F670002F4681 /* StockViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61F13E8D1F91F670002F4681 /* JJStockViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJStockViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F13E911F91F670002F4681 /* StockViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockViewTests.m; sourceTree = "<group>"; };
 		61F13E931F91F670002F4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61F13E981F91F670002F4681 /* StockViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61F13E981F91F670002F4681 /* JJStockViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJStockViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F13E9C1F91F670002F4681 /* StockViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockViewUITests.m; sourceTree = "<group>"; };
 		61F13E9E1F91F670002F4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61F13EAB1F91F6D3002F4681 /* StockViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockViewCell.m; sourceTree = "<group>"; };
-		61F13EAC1F91F6D3002F4681 /* StockViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockViewCell.h; sourceTree = "<group>"; };
-		61F13EAD1F91F6D4002F4681 /* StockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockView.m; sourceTree = "<group>"; };
-		61F13EAE1F91F6D4002F4681 /* StockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockView.h; sourceTree = "<group>"; };
+		61F13EAB1F91F6D3002F4681 /* JJStockViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJStockViewCell.m; sourceTree = "<group>"; };
+		61F13EAC1F91F6D3002F4681 /* JJStockViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJStockViewCell.h; sourceTree = "<group>"; };
+		61F13EAD1F91F6D4002F4681 /* JJStockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJStockView.m; sourceTree = "<group>"; };
+		61F13EAE1F91F6D4002F4681 /* JJStockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJStockView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		61F13E6C1F91F670002F4681 = {
 			isa = PBXGroup;
 			children = (
-				61F13E771F91F670002F4681 /* StockView */,
+				61F13E771F91F670002F4681 /* JJStockView */,
 				61F13E901F91F670002F4681 /* StockViewTests */,
 				61F13E9B1F91F670002F4681 /* StockViewUITests */,
 				61F13E761F91F670002F4681 /* Products */,
@@ -96,14 +96,14 @@
 		61F13E761F91F670002F4681 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61F13E751F91F670002F4681 /* StockView.app */,
-				61F13E8D1F91F670002F4681 /* StockViewTests.xctest */,
-				61F13E981F91F670002F4681 /* StockViewUITests.xctest */,
+				61F13E751F91F670002F4681 /* JJStockView.app */,
+				61F13E8D1F91F670002F4681 /* JJStockViewTests.xctest */,
+				61F13E981F91F670002F4681 /* JJStockViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		61F13E771F91F670002F4681 /* StockView */ = {
+		61F13E771F91F670002F4681 /* JJStockView */ = {
 			isa = PBXGroup;
 			children = (
 				61F13EAA1F91F6B1002F4681 /* Source */,
@@ -115,7 +115,7 @@
 				61F13E861F91F670002F4681 /* Info.plist */,
 				61F13E871F91F670002F4681 /* main.m */,
 			);
-			path = StockView;
+			path = JJStockView;
 			sourceTree = "<group>";
 		};
 		61F13E901F91F670002F4681 /* StockViewTests */ = {
@@ -139,12 +139,12 @@
 		61F13EAA1F91F6B1002F4681 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				61F13EAE1F91F6D4002F4681 /* StockView.h */,
-				61F13EAD1F91F6D4002F4681 /* StockView.m */,
-				61F13EAC1F91F6D3002F4681 /* StockViewCell.h */,
-				61F13EAB1F91F6D3002F4681 /* StockViewCell.m */,
-				6186110C1F95E2F600E4E8B4 /* StockScrollView.h */,
-				6186110D1F95E2F600E4E8B4 /* StockScrollView.m */,
+				61F13EAE1F91F6D4002F4681 /* JJStockView.h */,
+				61F13EAD1F91F6D4002F4681 /* JJStockView.m */,
+				61F13EAC1F91F6D3002F4681 /* JJStockViewCell.h */,
+				61F13EAB1F91F6D3002F4681 /* JJStockViewCell.m */,
+				6186110C1F95E2F600E4E8B4 /* JJStockScrollView.h */,
+				6186110D1F95E2F600E4E8B4 /* JJStockScrollView.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		61F13E741F91F670002F4681 /* StockView */ = {
+		61F13E741F91F670002F4681 /* JJStockView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61F13EA11F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockView" */;
+			buildConfigurationList = 61F13EA11F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockView" */;
 			buildPhases = (
 				61F13E711F91F670002F4681 /* Sources */,
 				61F13E721F91F670002F4681 /* Frameworks */,
@@ -164,14 +164,14 @@
 			);
 			dependencies = (
 			);
-			name = StockView;
+			name = JJStockView;
 			productName = StockView;
-			productReference = 61F13E751F91F670002F4681 /* StockView.app */;
+			productReference = 61F13E751F91F670002F4681 /* JJStockView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		61F13E8C1F91F670002F4681 /* StockViewTests */ = {
+		61F13E8C1F91F670002F4681 /* JJStockViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61F13EA41F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockViewTests" */;
+			buildConfigurationList = 61F13EA41F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockViewTests" */;
 			buildPhases = (
 				61F13E891F91F670002F4681 /* Sources */,
 				61F13E8A1F91F670002F4681 /* Frameworks */,
@@ -182,14 +182,14 @@
 			dependencies = (
 				61F13E8F1F91F670002F4681 /* PBXTargetDependency */,
 			);
-			name = StockViewTests;
+			name = JJStockViewTests;
 			productName = StockViewTests;
-			productReference = 61F13E8D1F91F670002F4681 /* StockViewTests.xctest */;
+			productReference = 61F13E8D1F91F670002F4681 /* JJStockViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		61F13E971F91F670002F4681 /* StockViewUITests */ = {
+		61F13E971F91F670002F4681 /* JJStockViewUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61F13EA71F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockViewUITests" */;
+			buildConfigurationList = 61F13EA71F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockViewUITests" */;
 			buildPhases = (
 				61F13E941F91F670002F4681 /* Sources */,
 				61F13E951F91F670002F4681 /* Frameworks */,
@@ -200,9 +200,9 @@
 			dependencies = (
 				61F13E9A1F91F670002F4681 /* PBXTargetDependency */,
 			);
-			name = StockViewUITests;
+			name = JJStockViewUITests;
 			productName = StockViewUITests;
-			productReference = 61F13E981F91F670002F4681 /* StockViewUITests.xctest */;
+			productReference = 61F13E981F91F670002F4681 /* JJStockViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 61F13E701F91F670002F4681 /* Build configuration list for PBXProject "StockView" */;
+			buildConfigurationList = 61F13E701F91F670002F4681 /* Build configuration list for PBXProject "JJStockView" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				61F13E741F91F670002F4681 /* StockView */,
-				61F13E8C1F91F670002F4681 /* StockViewTests */,
-				61F13E971F91F670002F4681 /* StockViewUITests */,
+				61F13E741F91F670002F4681 /* JJStockView */,
+				61F13E8C1F91F670002F4681 /* JJStockViewTests */,
+				61F13E971F91F670002F4681 /* JJStockViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,10 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F13EB01F91F6D4002F4681 /* StockView.m in Sources */,
+				61F13EB01F91F6D4002F4681 /* JJStockView.m in Sources */,
 				61F13E7D1F91F670002F4681 /* DemoViewController.m in Sources */,
-				6186110E1F95E2F600E4E8B4 /* StockScrollView.m in Sources */,
-				61F13EAF1F91F6D4002F4681 /* StockViewCell.m in Sources */,
+				6186110E1F95E2F600E4E8B4 /* JJStockScrollView.m in Sources */,
+				61F13EAF1F91F6D4002F4681 /* JJStockViewCell.m in Sources */,
 				61F13E881F91F670002F4681 /* main.m in Sources */,
 				61F13E7A1F91F670002F4681 /* AppDelegate.m in Sources */,
 			);
@@ -310,12 +310,12 @@
 /* Begin PBXTargetDependency section */
 		61F13E8F1F91F670002F4681 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 61F13E741F91F670002F4681 /* StockView */;
+			target = 61F13E741F91F670002F4681 /* JJStockView */;
 			targetProxy = 61F13E8E1F91F670002F4681 /* PBXContainerItemProxy */;
 		};
 		61F13E9A1F91F670002F4681 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 61F13E741F91F670002F4681 /* StockView */;
+			target = 61F13E741F91F670002F4681 /* JJStockView */;
 			targetProxy = 61F13E991F91F670002F4681 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -431,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = CS3P4Q373F;
-				INFOPLIST_FILE = StockView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JJStockView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hjclass.hujiangclass;
@@ -448,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = StockView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JJStockView/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hjclass.hujiangclass;
@@ -468,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StockView.StockViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockView.app/StockView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJStockView.app/JJStockView";
 			};
 			name = Debug;
 		};
@@ -482,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StockView.StockViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockView.app/StockView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJStockView.app/JJStockView";
 			};
 			name = Release;
 		};
@@ -515,7 +515,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		61F13E701F91F670002F4681 /* Build configuration list for PBXProject "StockView" */ = {
+		61F13E701F91F670002F4681 /* Build configuration list for PBXProject "JJStockView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61F13E9F1F91F670002F4681 /* Debug */,
@@ -524,7 +524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61F13EA11F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockView" */ = {
+		61F13EA11F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61F13EA21F91F670002F4681 /* Debug */,
@@ -533,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61F13EA41F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockViewTests" */ = {
+		61F13EA41F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61F13EA51F91F670002F4681 /* Debug */,
@@ -542,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61F13EA71F91F670002F4681 /* Build configuration list for PBXNativeTarget "StockViewUITests" */ = {
+		61F13EA71F91F670002F4681 /* Build configuration list for PBXNativeTarget "JJStockViewUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61F13EA81F91F670002F4681 /* Debug */,

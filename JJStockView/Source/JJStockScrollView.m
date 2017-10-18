@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Jezz. All rights reserved.
 //
 
-#import "StockScrollView.h"
+#import "JJStockScrollView.h"
 
-@implementation StockScrollView
+@implementation JJStockScrollView
 
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {

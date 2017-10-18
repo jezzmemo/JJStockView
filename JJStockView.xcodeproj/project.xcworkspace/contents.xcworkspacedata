@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:StockView.xcodeproj">
+      location = "self:/Users/jezz/git_project/StockView/JJStockView.xcodeproj">
    </FileRef>
 </Workspace>

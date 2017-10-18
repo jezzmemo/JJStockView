@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StockScrollView : UIScrollView
+@interface JJStockScrollView : UIScrollView
 
 @end
