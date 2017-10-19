@@ -35,6 +35,8 @@ const static NSInteger CONTENT_TAG = 1001;
     UIView* contentView = [self viewWithTag:CONTENT_TAG];
     UIView* titleView = [self viewWithTag:TITLE_TAG];
     
+    titleView.frame = CGRectMake(0, 0, CGRectGetWidth(titleView.frame), CGRectGetHeight(titleView.frame));
+    
     _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(titleView.frame), CGRectGetHeight(contentView.frame));
     _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(contentView.frame), CGRectGetHeight(contentView.frame));
     
@@ -63,13 +65,13 @@ const static NSInteger CONTENT_TAG = 1001;
 }
 
 - (void)setTitleView:(UIView*)titleView{
-    UIView* view = [self viewWithTag:TITLE_TAG];
+    UIView* view = [self.contentView viewWithTag:TITLE_TAG];
     if(view){
         [view removeFromSuperview];
     }
     titleView.tag = TITLE_TAG;
     [self.contentView addSubview:titleView];
-    
+        
     [self setNeedsLayout];
 }
 

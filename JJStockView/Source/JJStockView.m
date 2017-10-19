@@ -34,6 +34,11 @@ static NSString* const CellID = @"cellID";
     return self;
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    [super setBackgroundColor:backgroundColor];
+    self.stockTableView.backgroundColor = backgroundColor;
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     _stockTableView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
