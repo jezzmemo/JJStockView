@@ -9,9 +9,6 @@
 #import "JJStockViewCell.h"
 #import "JJStockScrollView.h"
 
-const static NSInteger TITLE_TAG = 1000;
-const static NSInteger CONTENT_TAG = 1001;
-
 @interface JJStockViewCell()<UIScrollViewDelegate>{
     @private
     UIScrollView* _rightContentScrollView;
@@ -32,14 +29,15 @@ const static NSInteger CONTENT_TAG = 1001;
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    UIView* contentView = [self viewWithTag:CONTENT_TAG];
-    UIView* titleView = [self viewWithTag:TITLE_TAG];
+    self.titleView.frame = CGRectMake(0, 0, CGRectGetWidth(self.titleView.frame), CGRectGetHeight(self.titleView.frame));
     
-    titleView.frame = CGRectMake(0, 0, CGRectGetWidth(titleView.frame), CGRectGetHeight(titleView.frame));
+    id tempDelegate = _rightContentScrollView.delegate;
+    _rightContentScrollView.delegate = nil;//Do not send delegate message
     
-    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(titleView.frame), CGRectGetHeight(contentView.frame));
-    _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(contentView.frame), CGRectGetHeight(contentView.frame));
+    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(self.titleView.frame), 0, CGRectGetWidth(self.frame) - CGRectGetWidth(self.titleView.frame), CGRectGetHeight(self.rightContentView.frame));
+    _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.rightContentView.frame), CGRectGetHeight(self.rightContentView.frame));
     
+    _rightContentScrollView.delegate = tempDelegate;//Restore deleagte
 }
 
 - (void)setupDefaultSettings{
@@ -65,23 +63,23 @@ const static NSInteger CONTENT_TAG = 1001;
 }
 
 - (void)setTitleView:(UIView*)titleView{
-    UIView* view = [self.contentView viewWithTag:TITLE_TAG];
-    if(view){
-        [view removeFromSuperview];
+    if(_titleView){
+        [_titleView removeFromSuperview];
     }
-    titleView.tag = TITLE_TAG;
     [self.contentView addSubview:titleView];
+    
+    _titleView = titleView;
         
     [self setNeedsLayout];
 }
 
 - (void)setRightContentView:(UIView*)contentView{
-    UIView* view = [_rightContentScrollView viewWithTag:CONTENT_TAG];
-    if(view){
-        [view removeFromSuperview];
+    if(_rightContentView){
+        [_rightContentView removeFromSuperview];
     }
-    contentView.tag = CONTENT_TAG;
     [_rightContentScrollView addSubview:contentView];
+    
+    _rightContentView = contentView;
     
     [self setNeedsLayout];
 }

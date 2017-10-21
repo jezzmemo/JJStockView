@@ -12,7 +12,8 @@
 static NSString* const CellID = @"cellID";
 
 @interface JJStockView()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>{
-    CGFloat _lastScrollX;//Save scroll x position
+    
+    CGFloat _lastScrollX; //Save scroll x position
 }
 
 @property(nonatomic,readwrite,strong)UITableView* stockTableView;
@@ -55,10 +56,14 @@ static NSString* const CellID = @"cellID";
 
 - (void)reloadStockView{
     [self.stockTableView reloadData];
+    
+    [self scrollToLastScrollX];
 }
 
 - (void)reloadStockViewFromRow:(NSUInteger)row{
-    [self.stockTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.stockTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    
+    [self scrollToLastScrollX];
 }
 
 #pragma mark - TableView
@@ -144,7 +149,7 @@ static NSString* const CellID = @"cellID";
 #pragma mark - UIScrollViewDelegate
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    if (scrollView == self.stockTableView) {
+    if (scrollView == self.stockTableView){
         [self scrollToLastScrollX];
     }else if(scrollView == self.headScrollView){
         [self linkAgeScrollView:scrollView];
@@ -154,7 +159,7 @@ static NSString* const CellID = @"cellID";
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (scrollView == self.stockTableView) {
+    if (scrollView == self.stockTableView){
         [self scrollToLastScrollX];
     }else if(scrollView == self.headScrollView){
         [self linkAgeScrollView:scrollView];
@@ -179,6 +184,7 @@ static NSString* const CellID = @"cellID";
         [self.headScrollView setContentOffset:CGPointMake(sender.contentOffset.x, 0) animated:NO];
         self.headScrollView.delegate = self;//enable send scrollViewDidScroll message
     }
+    
     
     _lastScrollX = sender.contentOffset.x;
 }
