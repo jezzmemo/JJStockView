@@ -62,13 +62,13 @@
     [self.rightContentScrollView addGestureRecognizer:tapGesture];
 }
 
+#pragma mark - Tap
+
 - (void)tapAction:(UITapGestureRecognizer *)gesture{
     if (self.rightContentTapBlock) {
         self.rightContentTapBlock(self);
     }
 }
-
-#pragma mark - Tap
 
 #pragma mark - Public
 
