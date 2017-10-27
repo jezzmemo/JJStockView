@@ -20,6 +20,54 @@ $ pod install
 
 ## 如何使用
 
+简单的使用示例:
+
+```objc
+
+- (NSUInteger)countForStockView:(JJStockView*)stockView{
+    return 30;
+}
+
+- (UIView*)titleCellForStockView:(JJStockView*)stockView atRowPath:(NSUInteger)row{
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    label.text = [NSString stringWithFormat:@"标题:%ld",row];
+    label.textColor = [UIColor grayColor];
+    label.backgroundColor = [UIColor colorWithRed:223.0f/255.0 green:223.0f/255.0 blue:223.0f/255.0 alpha:1.0];
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
+
+- (UIView*)contentCellForStockView:(JJStockView*)stockView atRowPath:(NSUInteger)row{
+    
+    UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
+    bg.backgroundColor = row % 2 == 0 ?[UIColor whiteColor] :[UIColor colorWithRed:240.0f/255.0 green:240.0f/255.0 blue:240.0f/255.0 alpha:1.0];
+    for (int i = 0; i < 10; i++) {
+        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
+        label.text = [NSString stringWithFormat:@"内容:%d",i];
+        label.textAlignment = NSTextAlignmentCenter;
+        [bg addSubview:label];
+    }
+    return bg;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title = @"股票表格";
+    self.stockView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    [self.view addSubview:self.stockView];
+}
+
+- (JJStockView*)stockView{
+    if(_stockView != nil){
+        return _stockView;
+    }
+    _stockView = [JJStockView new];
+    _stockView.dataSource = self;
+    _stockView.delegate = self;
+    return _stockView;
+}
+```
+
 基本上和TableView类似，首先必须实现以下DataSource
 ```objc
 @protocol StockViewDataSource <NSObject>
@@ -56,7 +104,7 @@ Delegate的所有实现都是可选的:
 
 ![code demo](https://raw.githubusercontent.com/jezzmemo/JJStockView/master/demo_code.png)
 
-最后给一个Demo的连接，我就不贴代码了:
+最后给一个Demo的连接，这里有详细的Demo示例:
 [https://github.com/jezzmemo/JJStockView/blob/master/JJStockView/DemoViewController.m](https://github.com/jezzmemo/JJStockView/blob/master/JJStockView/DemoViewController.m)
 
 
