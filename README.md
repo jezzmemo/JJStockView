@@ -1,7 +1,7 @@
 ![demo gif](https://github.com/jezzmemo/JJStockView/raw/master/demo.gif)
 
 ## JJStockView
-模仿股票表格和课程表，左右滑动时，标题部分不动，表头和右边内容一起滑动，上下滑动时，表头不动，所有内容一起上下滑动
+模仿股票表格和课程表，左右滑动时，标题部分不动，表头右边和内容右边一起滑动，上下滑动时，表头不动，所有内容一起上下滑动
 
 ## 如何安装
 
@@ -68,7 +68,7 @@ $ pod install
 }
 ```
 
-基本上和TableView类似，首先必须实现以下DataSource
+DataSource必须实现，注释解释了各自的作用
 ```objc
 @protocol StockViewDataSource <NSObject>
 
@@ -82,7 +82,7 @@ $ pod install
 @end
 ```
 
-Delegate的所有实现都是可选的:
+Delegate的实现都是可选的:
 ```objc
 @protocol StockViewDelegate <NSObject>
 
@@ -104,7 +104,7 @@ Delegate的所有实现都是可选的:
 
 ![code demo](https://raw.githubusercontent.com/jezzmemo/JJStockView/master/demo_code.png)
 
-最后给一个Demo的连接，这里有详细的Demo示例:
+这里有详细的Demo示例:
 [https://github.com/jezzmemo/JJStockView/blob/master/JJStockView/DemoViewController.m](https://github.com/jezzmemo/JJStockView/blob/master/JJStockView/DemoViewController.m)
 
 
@@ -112,7 +112,7 @@ Delegate的所有实现都是可选的:
 
 * 顶部不变的头部用heightForHeaderInSection显示，用标题和内容两部分组成，内容部分是用UIScrollView作为容器
 * 内容部分，用头部类似的结构，cellForRowAtIndexPath实现Cell,分成左右两边部分，左边UIView，右边用UIScrollView作为容器
-* 基于以上的结构，在任意一个UIScrollView滑动的时候，头部的UIScrollView和Cell的UIScrollView一起来滚动,代码片段如下:
+* 基于以上的结构，在任意一个UIScrollView滑动的时候，头部的UIScrollView和Cell右边的UIScrollView一起来联动,代码片段如下:
 ```objc
 - (void)linkAgeScrollView:(UIScrollView*)sender{
     NSArray* visibleCells = [self.stockTableView visibleCells];
