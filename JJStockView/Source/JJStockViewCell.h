@@ -20,6 +20,12 @@
 
 
 /**
+ 右边内容部分的点击事件Block
+ */
+@property(nonatomic,readwrite,copy)void (^rightContentTapBlock)(JJStockViewCell* cell);
+
+
+/**
  设置左边的自定义View
  */
 @property(nonatomic,readwrite,strong)UIView* titleView;

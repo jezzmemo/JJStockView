@@ -44,17 +44,17 @@
     UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
     bg.backgroundColor = row % 2 == 0 ?[UIColor whiteColor] :[UIColor colorWithRed:240.0f/255.0 green:240.0f/255.0 blue:240.0f/255.0 alpha:1.0];
     for (int i = 0; i < 10; i++) {
-        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
-        [button setTitle:[NSString stringWithFormat:@"内容:%d",i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        button.titleLabel.textAlignment = NSTextAlignmentCenter;
-        button.tag = i;
-        [bg addSubview:button];
-//        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
-//        label.text = [NSString stringWithFormat:@"内容:%d",i];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        [bg addSubview:label];
+//        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
+//        [button setTitle:[NSString stringWithFormat:@"内容:%d",i] forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+//        button.tag = i;
+//        [bg addSubview:button];
+        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];
+        label.text = [NSString stringWithFormat:@"内容:%d",i];
+        label.textAlignment = NSTextAlignmentCenter;
+        [bg addSubview:label];
     }
     return bg;
 }

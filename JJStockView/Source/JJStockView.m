@@ -66,6 +66,10 @@ static NSString* const CellID = @"cellID";
     [self scrollToLastScrollX];
 }
 
+- (void)scrollStockViewToRow:(NSUInteger)row{
+    [self.stockTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+
 #pragma mark - TableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,8 +87,14 @@ static NSString* const CellID = @"cellID";
         [cell setRightContentView:[self.dataSource contentCellForStockView:self atRowPath:indexPath.row]];
     }
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [cell.rightContentScrollView addGestureRecognizer:tapGesture];
+    __weak typeof(self) weakSelf = self;
+    [cell setRightContentTapBlock:^(JJStockViewCell* cell){
+        __strong typeof(self) strongSelf = weakSelf;
+        NSIndexPath* indexPath = [tableView indexPathForCell:cell];
+        if ([strongSelf.delegate respondsToSelector:@selector(didSelect:atRowPath:)]) {
+            [strongSelf.delegate didSelect:strongSelf atRowPath:indexPath.row];
+        }
+    }];
     
     return cell;
     
@@ -200,16 +210,6 @@ static NSString* const CellID = @"cellID";
     self.headScrollView.delegate = nil;//disable send scrollViewDidScroll message
     [self.headScrollView setContentOffset:CGPointMake(_lastScrollX, 0) animated:NO];
     self.headScrollView.delegate = self;//enable send scrollViewDidScroll message
-}
-
-#pragma mark - Tap Click
-
-- (void)tapAction:(UITapGestureRecognizer *)gesture{
-    CGPoint point = [gesture locationInView:self.stockTableView];
-    NSIndexPath* indexPath = [self.stockTableView indexPathForRowAtPoint:point];
-    if (indexPath && [self.delegate respondsToSelector:@selector(didSelect:atRowPath:)]) {
-        [self.delegate didSelect:self atRowPath:indexPath.row];
-    }
 }
 
 #pragma mark - Property Get

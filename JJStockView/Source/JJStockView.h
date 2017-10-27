@@ -110,4 +110,12 @@
  */
 - (void)reloadStockViewFromRow:(NSUInteger)row;
 
+/**
+ 滚动到指定行，默认的位置是:UITableViewScrollPositionTop
+ 动画:NO
+
+ @param row 指定行的索引值
+ */
+- (void)scrollStockViewToRow:(NSUInteger)row;
+
 @end

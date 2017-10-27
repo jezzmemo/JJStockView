@@ -18,6 +18,12 @@
 
 @implementation JJStockViewCell
 
+- (void)dealloc{
+    self.rightContentTapBlock = nil;
+}
+
+#pragma mark - Init
+
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupDefaultSettings];
@@ -25,6 +31,8 @@
     }
     return self;
 }
+
+#pragma mark - Layout
 
 - (void)layoutSubviews{
     [super layoutSubviews];
@@ -40,6 +48,8 @@
     _rightContentScrollView.delegate = tempDelegate;//Restore deleagte
 }
 
+#pragma mark - Setup
+
 - (void)setupDefaultSettings{
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor whiteColor];
@@ -47,7 +57,18 @@
 
 - (void)setupView{
     [self.contentView addSubview:self.rightContentScrollView];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [self.rightContentScrollView addGestureRecognizer:tapGesture];
 }
+
+- (void)tapAction:(UITapGestureRecognizer *)gesture{
+    if (self.rightContentTapBlock) {
+        self.rightContentTapBlock(self);
+    }
+}
+
+#pragma mark - Tap
 
 #pragma mark - Public
 
