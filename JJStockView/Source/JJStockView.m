@@ -52,7 +52,7 @@ static NSString* const CellID = @"cellID";
     [self addSubview:self.stockTableView];
 }
 
-#pragma mark - Reload
+#pragma mark - Public
 
 - (void)reloadStockView{
     [self.stockTableView reloadData];
@@ -68,6 +68,16 @@ static NSString* const CellID = @"cellID";
 
 - (void)scrollStockViewToRow:(NSUInteger)row{
     [self.stockTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+
+- (void)setStockViewHeadView:(UIView *)stockViewHeadView{
+    self.stockTableView.tableHeaderView = stockViewHeadView;
+    _stockViewHeadView = stockViewHeadView;
+}
+
+- (void)setStockViewFootView:(UIView *)stockViewFootView{
+    self.stockTableView.tableFooterView = stockViewFootView;
+    _stockViewFootView = stockViewFootView;
 }
 
 #pragma mark - TableView

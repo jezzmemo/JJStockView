@@ -92,9 +92,26 @@
 
 @interface JJStockView : UIView
 
+/**
+ 使用JJStockView必须全部实现，才能正常使用
+ */
 @property(nonatomic,readwrite,weak)id<StockViewDataSource> dataSource;
 
+/**
+ 一些可选的方法，头部，点击事件等等
+ */
 @property(nonatomic,readwrite,weak)id<StockViewDelegate> delegate;
+
+
+/**
+ JJStockView的头部
+ */
+@property(nonatomic,readwrite,strong)UIView* stockViewHeadView;
+
+/**
+ JJStockView的尾部
+ */
+@property(nonatomic,readwrite,strong)UIView* stockViewFootView;
 
 
 /**
