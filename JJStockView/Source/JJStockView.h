@@ -104,14 +104,10 @@
 
 
 /**
- JJStockView的头部
+ 具体实现的UITableView，只读，千万不能设置他的Delegate和Datasource,
+ 如果设置了，这个控件将不能正常工作
  */
-@property(nonatomic,readwrite,strong)UIView* stockViewHeadView;
-
-/**
- JJStockView的尾部
- */
-@property(nonatomic,readwrite,strong)UIView* stockViewFootView;
+@property(nonatomic,readonly,weak)UITableView* jjStockTableView;
 
 
 /**

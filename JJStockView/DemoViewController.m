@@ -110,23 +110,7 @@
     _stockView = [JJStockView new];
     _stockView.dataSource = self;
     _stockView.delegate = self;
-    _stockView.stockViewHeadView = [self headView];
-    _stockView.stockViewFootView = [self footView];
     return _stockView;
-}
-
-#pragma mark - Head and Foot
-
-- (UIView*)headView{
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame),40)];
-    view.backgroundColor = [UIColor redColor];
-    return view;
-}
-
-- (UIView*)footView{
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame),40)];
-    view.backgroundColor = [UIColor greenColor];
-    return view;
 }
 
 @end

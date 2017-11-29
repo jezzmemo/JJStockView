@@ -70,14 +70,8 @@ static NSString* const CellID = @"cellID";
     [self.stockTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
-- (void)setStockViewHeadView:(UIView *)stockViewHeadView{
-    self.stockTableView.tableHeaderView = stockViewHeadView;
-    _stockViewHeadView = stockViewHeadView;
-}
-
-- (void)setStockViewFootView:(UIView *)stockViewFootView{
-    self.stockTableView.tableFooterView = stockViewFootView;
-    _stockViewFootView = stockViewFootView;
+- (UITableView*)jjStockTableView{
+    return _stockTableView;
 }
 
 #pragma mark - TableView
@@ -137,32 +131,32 @@ static NSString* const CellID = @"cellID";
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 40)];
     headerView.backgroundColor = [UIColor whiteColor];
-    
+
     CGFloat regularWidth = 0.0f;
     CGFloat headHeight = 0.0f;
-    
+
     if([self.delegate respondsToSelector:@selector(headRegularTitle:)]){
         UIView* regularView = [self.delegate headRegularTitle:self];
         [headerView addSubview:regularView];
-        
+
         regularWidth = CGRectGetWidth(regularView.frame);
     }
-    
+
     if([self.delegate respondsToSelector:@selector(heightForHeadTitle:)]){
         headHeight =  [self.delegate heightForHeadTitle:self];
     }
-    
+
     [headerView addSubview:self.headScrollView];
-    
+
     self.headScrollView.frame = CGRectMake(regularWidth,0,CGRectGetWidth(self.frame) - regularWidth,headHeight);
-    
+
     if([self.delegate respondsToSelector:@selector(headTitle:)]){
         UIView* titleView = [self.delegate headTitle:self];
         [self.headScrollView addSubview:titleView];
-        
+
         self.headScrollView.contentSize = CGSizeMake(CGRectGetWidth(titleView.frame), headHeight);
     }
-    
+
     return headerView;
 }
 
@@ -233,6 +227,7 @@ static NSString* const CellID = @"cellID";
     _stockTableView.delegate = self;
     _stockTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_stockTableView registerClass:[JJStockViewCell class] forCellReuseIdentifier:CellID];
+    
     return _stockTableView;
 }
 
